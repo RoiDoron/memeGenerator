@@ -1,0 +1,16 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 20px;
+}
+
+.canvas-container{
+    grid-column: 2;
+    width: 45vw;
+    height: 45vw;
+}
+
+.edit-options-container{
+    grid-column: 3;
+
+}
+
