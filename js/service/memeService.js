@@ -20,6 +20,21 @@ var gMeme = {
             y: 380
         }
     ]
+    lines: [
+        {
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            color: 'red',
+            x: 225,
+            y: 60
+        }, {
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            color: 'red',
+            x: 225,
+            y: 380
+        }
+    ]
 
 }
 
@@ -29,17 +44,39 @@ function getMeme() {
 
 function setLineText(txt, line) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
+function setLineText(txt, line) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
+function setImg(img) {
 function setImg(img) {
     gMeme.selectedImgId = img.id
     gCurrImg = img
 }
 
 function getImg() {
+function getImg() {
     return gCurrImg
 }
 
+function colorChange(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+}
+
+function BiggerFont() {
+    gMeme.lines[0].size += 1
+}
+
+function SmallerFont() {
+    gMeme.lines[0].size -= 1
+}
+
+function SelectLine() {
+    if (gMeme.lines.length > gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx += 1
+    else if (gMeme.lines.length === gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx -= 1
+    return gMeme.lines[gMeme.selectedLineIdx]
+
+}
 function colorChange(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
