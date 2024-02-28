@@ -9,13 +9,13 @@ var gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'red',
+            color: 'black',
             x: 225,
             y: 60
         }, {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'red',
+            color: 'black',
             x: 225,
             y: 380
         }
@@ -45,11 +45,11 @@ function colorChange(color) {
 }
 
 function BiggerFont() {
-    gMeme.lines[0].size += 1
+    gMeme.lines[gMeme.selectedLineIdx].size += 1
 }
 
 function SmallerFont() {
-    gMeme.lines[0].size -= 1
+    gMeme.lines[gMeme.selectedLineIdx].size -= 1
 }
 
 function SelectLine() {

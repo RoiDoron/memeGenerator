@@ -23,11 +23,12 @@ function renderMeme() {
     const img = getImg()
     const lines = meme.lines
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(lines)
+    drawText(meme)
 
 }
 
-function drawText(lines) {
+function drawText(meme) {
+    const lines = meme.lines
     for (let i = 0; i < gLines; i++) {
         const line = lines[i]
         gCtx.lineWidth = 2
@@ -41,7 +42,14 @@ function drawText(lines) {
 
 
         gCtx.fillText(line.txt, line.x, line.y)
-        gCtx.strokeText(line.txt, line.x, line.y)
+        // gCtx.strokeText(line.txt, line.x, line.y)
+
+        if (meme.selectedLineIdx === i) {
+            const textWidth = gCtx.measureText(line.txt).width*1.1
+            const lineHeight = line.size * 1.5
+            gCtx.strokeRect(line.x-textWidth/2, line.y-lineHeight/2, textWidth, lineHeight)
+            // gCtx.stroke()
+        }
     }
 
 }
@@ -95,6 +103,7 @@ function onSelectLine() {
     const line = SelectLine()
 
     elInput.value = line.txt
+    renderMeme()
 }
 
 function downloadImg(elLink) {
