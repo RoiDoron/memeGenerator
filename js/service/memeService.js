@@ -1,7 +1,7 @@
 'use strict'
 
 var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }]
-
+var gCurrImg
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
@@ -24,4 +24,9 @@ function setLineText(txt) {
 
 function setImg(img){
     gMeme.selectedImgId = img.id
+    gCurrImg = img
+}
+
+function getImg(){
+    return gCurrImg
 }

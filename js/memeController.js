@@ -13,21 +13,22 @@ function onInit() {
     renderGallery()
 }
 
-function onTextInput(text){
+function onTextInput(text) {
     console.log(text);
-    
+
     setLineText(text)
     renderMeme()
 }
 
-function renderMeme(img) {
+function renderMeme() {
     const meme = getMeme()
+    const img = getImg()
     const lines = meme.lines
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(lines.txt,lines.size,lines.color)
+    drawText(lines.txt, lines.size, lines.color)
 }
 
-function drawText(txt,size,color) {
+function drawText(txt, size, color) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = color
 

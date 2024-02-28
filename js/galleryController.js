@@ -10,5 +10,5 @@ function renderGallery() {
 
 function onImgSelect(img){
   setImg(img)
-  renderMeme(img)
+  renderMeme()
 }
