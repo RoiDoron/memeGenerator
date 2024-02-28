@@ -24,6 +24,10 @@
             <div class="canvas-container"><canvas height="450" width="450"></canvas></div>
             <div class="edit-options-container ">
                 <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
+                    <input type="color" oninput="onColorChange(this.value)">
+                    <button onclick="onBiggerFont()">A+</button>
+                    <button onclick="onSmallerFont()">A-</button>
             </div>
         </div>
     </section>

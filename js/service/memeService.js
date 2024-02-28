@@ -22,11 +22,23 @@ function setLineText(txt) {
     gMeme.lines.txt = txt
 }
 
-function setImg(img){
+function setImg(img) {
     gMeme.selectedImgId = img.id
     gCurrImg = img
 }
 
-function getImg(){
+function getImg() {
     return gCurrImg
+}
+
+function colorChange(color) {
+    gMeme.lines.color = color
+}
+
+function BiggerFont(){
+    gMeme.lines.size +=1
+}
+
+function SmallerFont(){
+    gMeme.lines.size -=1
 }

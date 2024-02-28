@@ -14,12 +14,6 @@ function onInit() {
     addListeners()
 }
 
-function onTextInput(text) {
-    console.log(text);
-
-    setLineText(text)
-    renderMeme()
-}
 
 function renderMeme() {
     const elEditor = document.querySelector('.editor-container')
@@ -47,23 +41,46 @@ function drawText(txt, size, color) {
 }
 
 function addListeners() {
-	
-	window.addEventListener('resize', () => {
-		resizeCanvas()
-		
-	})
+
+    window.addEventListener('resize', () => {
+        resizeCanvas()
+
+    })
 }
 
 function resizeCanvas() {
-	const elContainer = document.querySelector('.canvas-container')
+    const elContainer = document.querySelector('.canvas-container')
 
-	gElCanvas.width = elContainer.offsetWidth
-    
-	gElCanvas.height = elContainer.offsetHeight
+    gElCanvas.width = elContainer.offsetWidth
+
+    gElCanvas.height = elContainer.offsetHeight
     renderMeme()
 }
 
-/// when there is a gallery
-// function onSelectImg(elImg) {
-//     coverCanvasWithImg(elImg)
-// }
+
+function onTextInput(text) {
+    console.log(text);
+
+    setLineText(text)
+    renderMeme()
+}
+
+function onColorChange(color) {
+    colorChange(color)
+    renderMeme()
+}
+
+function onBiggerFont(){
+BiggerFont()
+renderMeme()
+}
+
+function onSmallerFont(){
+SmallerFont()
+renderMeme()
+}
+
+function downloadImg(elLink) {
+    const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
+    elLink.href = imgContent
+}
