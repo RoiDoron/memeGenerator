@@ -5,12 +5,21 @@ var gCurrImg
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
-    lines:
-    {
-        txt: 'I sometimes eat Falafel',
-        size: 20,
-        color: 'red'
-    }
+    lines: [
+        {
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            color: 'red',
+            x: 225,
+            y: 60
+        }, {
+            txt: 'I sometimes eat Falafel',
+            size: 20,
+            color: 'red',
+            x: 225,
+            y: 380
+        }
+    ]
 
 }
 
@@ -18,8 +27,8 @@ function getMeme() {
     return gMeme
 }
 
-function setLineText(txt) {
-    gMeme.lines.txt = txt
+function setLineText(txt,line) {
+    gMeme.lines[line].txt = txt
 }
 
 function setImg(img) {
@@ -31,14 +40,14 @@ function getImg() {
     return gCurrImg
 }
 
-function colorChange(color) {
-    gMeme.lines.color = color
+function colorChange(color,line) {
+    gMeme.lines[line].color = color
 }
 
-function BiggerFont(){
-    gMeme.lines.size +=1
+function BiggerFont() {
+    gMeme.lines[0].size += 1
 }
 
-function SmallerFont(){
-    gMeme.lines.size -=1
+function SmallerFont() {
+    gMeme.lines[0].size -= 1
 }
