@@ -52,6 +52,11 @@ function SmallerFont() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 1
 }
 
+function changePlaceTxt(offsetWidth,offsetHeight){
+    const x =  offsetWidth/2
+    gMeme.lines.forEach(line => line.x =x)
+    gMeme.lines[1].y = offsetHeight -60
+}
 function SelectLine() {
     if (gMeme.lines.length > gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx += 1
     else if (gMeme.lines.length === gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx -= 1

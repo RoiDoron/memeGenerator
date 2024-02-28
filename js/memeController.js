@@ -45,9 +45,9 @@ function drawText(meme) {
         // gCtx.strokeText(line.txt, line.x, line.y)
 
         if (meme.selectedLineIdx === i) {
-            const textWidth = gCtx.measureText(line.txt).width*1.1
+            const textWidth = gCtx.measureText(line.txt).width * 1.1
             const lineHeight = line.size * 1.5
-            gCtx.strokeRect(line.x-textWidth/2, line.y-lineHeight/2, textWidth, lineHeight)
+            gCtx.strokeRect(line.x - textWidth / 2, line.y - lineHeight / 2, textWidth, lineHeight)
             // gCtx.stroke()
         }
     }
@@ -68,6 +68,9 @@ function resizeCanvas() {
     gElCanvas.width = elContainer.offsetWidth
 
     gElCanvas.height = elContainer.offsetHeight
+    
+    changePlaceTxt(elContainer.offsetWidth,elContainer.offsetHeight)
+
     renderMeme()
 }
 
