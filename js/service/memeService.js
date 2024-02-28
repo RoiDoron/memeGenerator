@@ -21,3 +21,7 @@ function getMeme() {
 function setLineText(txt) {
     gMeme.lines.txt = txt
 }
+
+function setImg(img){
+    gMeme.selectedImgId = img.id
+}

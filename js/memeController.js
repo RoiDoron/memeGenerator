@@ -10,7 +10,7 @@ myImage.src = "img/4.jpg";
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    renderMeme()
+    renderGallery()
 }
 
 function onTextInput(text){
@@ -20,10 +20,10 @@ function onTextInput(text){
     renderMeme()
 }
 
-function renderMeme() {
+function renderMeme(img) {
     const meme = getMeme()
     const lines = meme.lines
-    gCtx.drawImage(myImage, 0, 0, gElCanvas.width, gElCanvas.height)
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     drawText(lines.txt,lines.size,lines.color)
 }
 
