@@ -65,12 +65,12 @@ function resizeCanvas() {
 
 
 function onTextInput(text) {
-    setLineText(text, currText)
+    setLineText(text)
     renderMeme()
 }
 
 function onColorChange(color) {
-    colorChange(color, currText)
+    colorChange(color)
     renderMeme()
 }
 
@@ -88,6 +88,13 @@ function onAddLine() {
     if (gLines > 1) return
     gLines++
     renderMeme()
+}
+
+function onSelectLine() {
+    const elInput = document.querySelector('.text')
+    const line = SelectLine()
+
+    elInput.value = line.txt
 }
 
 function downloadImg(elLink) {

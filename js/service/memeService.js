@@ -27,8 +27,8 @@ function getMeme() {
     return gMeme
 }
 
-function setLineText(txt,line) {
-    gMeme.lines[line].txt = txt
+function setLineText(txt, line) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
 function setImg(img) {
@@ -40,8 +40,8 @@ function getImg() {
     return gCurrImg
 }
 
-function colorChange(color,line) {
-    gMeme.lines[line].color = color
+function colorChange(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function BiggerFont() {
@@ -50,4 +50,11 @@ function BiggerFont() {
 
 function SmallerFont() {
     gMeme.lines[0].size -= 1
+}
+
+function SelectLine() {
+    if (gMeme.lines.length > gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx += 1
+    else if (gMeme.lines.length === gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx -= 1
+    return gMeme.lines[gMeme.selectedLineIdx]
+
 }
