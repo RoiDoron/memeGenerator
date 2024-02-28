@@ -13,6 +13,13 @@ function onInit() {
     renderMeme()
 }
 
+function onTextInput(text){
+    console.log(text);
+    
+    setLineText(text)
+    renderMeme()
+}
+
 function renderMeme() {
     const meme = getMeme()
     const lines = meme.lines
