@@ -9,6 +9,8 @@ function renderGallery() {
 }
 
 function onImgSelect(img){
+const elGallery = document.querySelector('.gallery-container')
+elGallery.hidden=true
   setImg(img)
   renderMeme()
 }

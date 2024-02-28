@@ -21,6 +21,8 @@ function onTextInput(text) {
 }
 
 function renderMeme() {
+    const elEditor = document.querySelector('.editor-container')
+    elEditor.hidden = false
     const meme = getMeme()
     const img = getImg()
     const lines = meme.lines
@@ -39,8 +41,8 @@ function drawText(txt, size, color) {
     gCtx.textBaseline = 'middle'
 
 
-    gCtx.fillText(txt, 208, 60)
-    gCtx.strokeText(txt, 208, 60)
+    gCtx.fillText(txt, 225, 60)
+    gCtx.strokeText(txt, 225, 60)
 }
 
 

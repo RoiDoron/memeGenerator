@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Roi's meme Generator</title>
 </head>
-<body onload="onInit()">
+
+<body class="main-layout" onload="onInit()">
     <header class="main-header">
-        <div class="logo">Meme Gen</div>
-        <div class="main-nav">
-            <button class="btn">Gallery</button>
-            <button class="btn">Editor</button>
-            <button class="btn">About</button>
-        </div>
+            <div class="logo">Meme Gen</div>
+            <div class="main-nav">
+                <button class="btn">Gallery</button>
+                <button class="btn">Editor</button>
+                <button class="btn">About</button>
+            </div>
     </header>
-    <section class="gallery-container">  
+    <section class="gallery-container">
     </section>
-    <section class="editor-container">
+    <section hidden class="editor-container ">
         <div class="canvas-container"><canvas height="450" width="450"></canvas></div>
-        <div class="edit-options-container">
-            <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text" >
+        <div class="edit-options-container ">
+            <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
         </div>
     </section>
 
@@ -28,4 +30,5 @@
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
 </body>
+
 </html>
