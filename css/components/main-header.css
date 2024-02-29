@@ -1,10 +1,21 @@
 .main-header {
+    height: 76px;
     margin: 10px;
-    border-radius: 1em;
-    background-color: lightblue;
+    border-radius: 3em;
+    background-image: linear-gradient(to right, var(--primary-header1) , var(--primary-header2));
 }
 
 .logo,
 .main-nav{
     padding: 10px;
+}
+
+.logo{
+    margin-left: 6.34vw;
+    font-family: anta ,sans-serif;
+    font-size: 1.375em;
+}
+
+.main-nav{
+    margin-right: 19.365vw;
 }

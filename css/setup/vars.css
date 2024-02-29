@@ -1,0 +1,11 @@
+:root {
+    /* colors  */
+    --primary-base: #22252C;
+    --primary-header1:  #0F9BB3;
+    --primary-header2: #2DB878;
+    --primary-galley: #383B42;
+    --primary-btn: #FEFEFE;
+    --primary-btntxt: #F4FAF7;
+
+    --secondary-base: #58C93A;
+}

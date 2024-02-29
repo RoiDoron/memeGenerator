@@ -1,0 +1,22 @@
+.btn {
+    padding: 0.6em 1.5em;
+
+    background-color: #fefefe00; 
+    color: var(--primary-btntxt);
+    font-weight: bold;
+
+    
+    letter-spacing: 0.11em;
+    border-radius: 3em;
+    border: none;
+}
+
+.btn:hover {
+    /* color: var(--secondary-base);
+    border-color: var(--secondary-base); */
+}
+
+.btn.push{
+    background-color: var(--primary-btn); 
+    color: #27B285;
+}
