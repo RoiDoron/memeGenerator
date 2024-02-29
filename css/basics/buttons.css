@@ -9,14 +9,20 @@
     letter-spacing: 0.11em;
     border-radius: 3em;
     border: none;
+    transition: 0.6s;
 }
 
 .btn:hover {
-    /* color: var(--secondary-base);
-    border-color: var(--secondary-base); */
+    color: #27B285;
+    background-color: var(--primary-btn); 
 }
 
-.btn.push{
-    background-color: var(--primary-btn); 
-    color: #27B285;
+
+
+.toggle-menu-btn{
+    margin-right: 10px;
+    font-size: 2em;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    color: var(--primary-btntxt);
 }

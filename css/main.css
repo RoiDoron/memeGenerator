@@ -11,3 +11,6 @@
 @import url(components/main-header.css);
 @import url(components/editor-container.css);
 @import url(components/gallery-continer.css);
+
+/* media queries */
+@import url(setup/mq.css);
