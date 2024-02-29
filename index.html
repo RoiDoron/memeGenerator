@@ -9,10 +9,12 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
+    <div class="main-screen" onclick="toggleMenu()"></div>
+
     <header class="main-header flex space-between align-center">
         <div class="logo">Meme Gen</div>
         <div class="main-nav">
-            <button onclick="onGallery()" class="btn push">Gallery</button>
+            <button onclick="onGallery(this)" class="btn btn-gallery push">Gallery</button>
             <button class="btn">About</button>
         </div>
         <button class="toggle-menu-btn" onclick="toggleMenu()" type="button">☰</button>
@@ -21,7 +23,7 @@
     </section>
     <section hidden class="editor-container">
         <div class="grid-container">
-            <div class="canvas-container"><canvas onclick="onCanvasClick(event)" height="450" width="450"></canvas></div>
+            <div class="canvas-container"><canvas onclick="onCanvasClick(event)" height="350" width="350"></canvas></div>
             <div class="edit-options-container ">
                 <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
                 <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>

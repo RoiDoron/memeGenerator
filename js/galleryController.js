@@ -17,13 +17,17 @@ console.log(HTMLstr);
 function onImgSelect(img){
 const elGallery = document.querySelector('.gallery-container')
 elGallery.hidden=true
+const elBtn = document.querySelector('.btn-gallery')
+elBtn.classList.remove('push')
   setImg(img)
   renderMeme()
 }
 
-function onGallery(){
+function onGallery(btn){
   const elGallery = document.querySelector('.gallery-container')
   elGallery.hidden=false
   const elEditor = document.querySelector('.editor-container')
   elEditor.hidden=true
+
+  btn.classList.add('push')
 }

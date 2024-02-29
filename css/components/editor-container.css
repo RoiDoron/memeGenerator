@@ -4,6 +4,7 @@
     minmax(20px, 1fr)
     minmax(auto, 600px)
     minmax(20px, 1fr);
+    gap: 10px;
 }
 
 .edit-options-container{
@@ -12,13 +13,16 @@
 }
 
 .canvas-container{  
+   
     grid-column: 2;
-    width: 45vw;
-    height: 45vw;
+    width: 90vw;
+    height: 90vw;
     margin: auto;
 }
 
 canvas{
+    margin-top: 20px;
+   
     border-radius: 2em;
 }
 
