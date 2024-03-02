@@ -23,7 +23,7 @@
     </section>
     <section hidden class="editor-container">
         <div class="grid-container">
-            <div class="canvas-container"><canvas onclick="onCanvasClick(event)" height="350" width="350"></canvas></div>
+            <div class="canvas-container"><canvas onclick="onCanvasClick(event)" height="450" width="450"></canvas></div>
             <div class="edit-options-container ">
                 <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
                 <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
@@ -33,6 +33,20 @@
                     <button onclick="onAddLine()">Add line</button>
                     <button onclick="onDeleteLine()">Delete line</button>
                     <button onclick="onSelectLine()">Select line</button>
+                    <select name="font-family" onchange="onFontChange(this.value)">
+                    <option value="impact">Impact</option>
+                    <option value="ariel">Ariel</option>
+                    <option value="courier New">Courier New</option>
+                    <option value="anta">Anta</option>
+                    <option value="monaco">Monaco</option>
+                    </select>
+                    <select name="alignment" onchange="onAlignChange(this.value)">
+                        <option value="center">Center</option>
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                    </select>
+                    <button onclick="onUpText()">Up</button>
+                    <button onclick="onDownText()">Down</button>
             </div>
         </div>
     </section>

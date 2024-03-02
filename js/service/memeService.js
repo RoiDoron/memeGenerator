@@ -1,5 +1,7 @@
 'use strict'
 
+var gAlign = 'center'
+
 var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }]
 var gCurrImg
 var gMeme = {
@@ -7,18 +9,22 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt:'text',
+            align: 'center',
+            txt: 'text',
             size: 20,
             color: 'black',
-            pos:{x:225,y:60,rate :20},
-            id:0
+            pos: { x: 225, y: 60, rate: 20 },
+            id: 0,
+            font: 'impact'
         }, {
-            txt:'text',
+            align: 'center',
+            txt: 'text',
             size: 20,
             color: 'black',
-            pos:{x:225,y:380,rate :20},
-            id:1
-           
+            pos: { x: 225, y: 380, rate: 20 },
+            id: 1,
+            font: 'impact'
+
         }
     ]
 
@@ -30,7 +36,7 @@ function getMeme() {
 
 function setLineText(txt, line) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
-    
+
 }
 
 function setImg(img) {
@@ -54,56 +60,91 @@ function SmallerFont() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 1
 }
 
-function changePlaceTxt(offsetWidth,offsetHeight){
-    const x =  offsetWidth/2
-    gMeme.lines.forEach(line => line.pos.x =x)
-    gMeme.lines[1].pos.y = offsetHeight -60
+function changePlaceTxt(offsetWidth, offsetHeight) {
+    var x
+    if (gAlign === 'center') x = offsetWidth / 2
+    if (gAlign === 'left') x = 60
+    if (gAlign === 'center') x = offsetWidth - 60
+    gMeme.lines.forEach(line => line.pos.x = x)
+    gMeme.lines[1].pos.y = offsetHeight - 60
 }
+
+function changeFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+
+function upText() {
+    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 1
+}
+
+function downText() {
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += 1
+}
+
+function AlignChange(align,offsetX) {
+    gMeme.lines[gMeme.selectedLineIdx].align = align
+    console.log(offsetX);
+    
+    var x
+    if (align === 'center') x = offsetX / 2
+    if (align === 'left') x = 60
+    if (align === 'right') x = offsetX - 60
+
+    console.log(x);
+    
+    gMeme.lines[gMeme.selectedLineIdx].pos.x = x
+
+}
+
 function SelectLine() {
     if (gMeme.lines.length > gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx += 1
     else if (gMeme.lines.length === gMeme.selectedLineIdx + 1) gMeme.selectedLineIdx -= 1
     return gMeme.lines[gMeme.selectedLineIdx]
 
 }
-function SelectLineWithClick(line){
-gMeme.selectedLineIdx = line.id
+
+function SelectLineWithClick(line) {
+    gMeme.selectedLineIdx = line.id
 }
 
-function DeleteLine(){
+function DeleteLine() {
     const lineIdx = gMeme.lines.findIndex(line => line.id === gMeme.selectedLineIdx)
     gMeme.lines.splice(lineIdx, 1)
 }
 
-function AddLine(){
-    if(!gMeme.lines.length === 2)return
-    gMeme.lines=[
+function AddLine() {
+    if (!gMeme.lines.length === 2) return
+    gMeme.lines = [
         {
-            txt:'text',
+            align: 'center',
+            txt: 'text',
             size: 20,
             color: 'black',
-            pos:{x:225,y:60,rate :20},
-            id:0
+            pos: { x: 225, y: 60, rate: 20 },
+            id: 0,
+            font: 'impact'
         }, {
-            txt:'text',
+            align: 'center',
+            txt: 'text',
             size: 20,
             color: 'black',
-            pos:{x:225,y:380,rate :20},
-            id:1
-           
+            pos: { x: 225, y: 380, rate: 20 },
+            id: 1,
+            font: 'impact'
+
         }
     ]
 }
 
-
 function isTextClick(clickedPos) {
-    
-    const clickText = gMeme.lines.find(line => { 
+
+    const clickText = gMeme.lines.find(line => {
         const textWidth = gCtx.measureText(line.txt).width * 1.1
         const lineHeight = line.size * 1.5
-        const { x, y} = line.pos
+        const { x, y } = line.pos
         return clickedPos.x >= (x - textWidth / 2) && clickedPos.x <= x + textWidth &&
-                clickedPos.y >= (line.pos.y - lineHeight / 2) && clickedPos.y <= y + lineHeight
+            clickedPos.y >= (line.pos.y - lineHeight / 2) && clickedPos.y <= y + lineHeight
     })
-	
-	return clickText
+
+    return clickText
 }

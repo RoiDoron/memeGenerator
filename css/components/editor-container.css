@@ -9,7 +9,7 @@
 
 .edit-options-container{
     grid-column: 2;
-
+    
 }
 
 .canvas-container{  
@@ -17,11 +17,11 @@
     grid-column: 2;
     width: 90vw;
     height: 90vw;
-    margin: auto;
+    margin: 20px auto ;
 }
 
 canvas{
-    margin-top: 20px;
+   
    
     border-radius: 2em;
 }
