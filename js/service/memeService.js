@@ -7,6 +7,7 @@ var gCurrImg
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
+    howMany: 1,
     lines: [
         {
             align: 'center',
@@ -30,11 +31,25 @@ var gMeme = {
 
 }
 
+function Flex() {
+    const img = new Image ()
+    img.src = 'img/9.jpg'
+    gCurrImg = img
+    gMeme.lines[0].txt = '!זהו יש לי את זה'
+    gMeme.lines[0].size = 30
+
+    gMeme.lines[1].txt = '...הקונסול'
+    gMeme.lines[1].size = 30
+    gMeme.lines[1].color = 'red'
+    gMeme.howMany =2
+
+}
+
 function getMeme() {
     return gMeme
 }
 
-function setLineText(txt, line) {
+function setLineText(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 
 }
@@ -42,10 +57,14 @@ function setLineText(txt, line) {
 function setImg(img) {
     gMeme.selectedImgId = img.id
     gCurrImg = img
+    console.log(img);
+
 }
 
 function getImg() {
+    console.log(gCurrImg);
     return gCurrImg
+    
 }
 
 function colorChange(color) {
@@ -81,17 +100,17 @@ function downText() {
     gMeme.lines[gMeme.selectedLineIdx].pos.y += 1
 }
 
-function AlignChange(align,offsetX) {
+function AlignChange(align, offsetX) {
     gMeme.lines[gMeme.selectedLineIdx].align = align
     console.log(offsetX);
-    
+
     var x
     if (align === 'center') x = offsetX / 2
     if (align === 'left') x = 60
     if (align === 'right') x = offsetX - 60
 
     console.log(x);
-    
+
     gMeme.lines[gMeme.selectedLineIdx].pos.x = x
 
 }

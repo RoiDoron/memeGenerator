@@ -21,6 +21,8 @@
         <button class="toggle-menu-btn" onclick="toggleMenu()" type="button">☰</button>
     </header>
     <section class="gallery-container">
+        <button onclick="onFlex()" > I'm flex</button>
+        <div></div>
     </section>
     <section hidden class="editor-container">
         <div class="grid-container">
@@ -40,8 +42,8 @@
                     <button onclick="onBiggerFont()">A+</button>
                     <button onclick="onSmallerFont()">A-</button>
 
-                    <button class="fa-solid fa-align-center" onclick="onAlignChange('center')"></button>
                     <button class="fa-solid fa-align-left" onclick="onAlignChange('left')"></button>
+                    <button class="fa-solid fa-align-center" onclick="onAlignChange('center')"></button>
                     <button class="fa-solid fa-align-right" onclick="onAlignChange('right')"></button>
 
                     <button class="color-btn">
@@ -62,6 +64,7 @@
                     <button class="btn-share" onclick="onUploadImg()"> Upload to Facebook </button>
                     <a href="#" class="btn-download" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
                 </div>
+              
             </div>
         </div>
     </section>
