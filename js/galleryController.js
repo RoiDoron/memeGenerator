@@ -8,7 +8,7 @@ function renderGallery() {
     HTMLstr += `<div class="img-card"><img id="${i}" src="img/${i}.jpg" onclick="onImgSelect(this)"></div>`
 
   }
-  console.log(HTMLstr);
+ 
 
 
   elGallery.innerHTML = HTMLstr
@@ -28,6 +28,8 @@ function onGallery(btn) {
   elGallery.hidden = false
   const elEditor = document.querySelector('.editor-container')
   elEditor.hidden = true
+  const elAbout = document.querySelector('.about')
+  elAbout.hidden = true
 
   btn.classList.add('push')
 }

@@ -16,7 +16,8 @@ var gMeme = {
             color: 'black',
             pos: { x: 225, y: 60, rate: 20 },
             id: 0,
-            font: 'impact'
+            font: 'impact',
+            isDrag:false
         }, {
             align: 'center',
             txt: 'text',
@@ -24,7 +25,8 @@ var gMeme = {
             color: 'black',
             pos: { x: 225, y: 380, rate: 20 },
             id: 1,
-            font: 'impact'
+            font: 'impact',
+            isDrag:false
 
         }
     ]
@@ -57,12 +59,12 @@ function setLineText(txt) {
 function setImg(img) {
     gMeme.selectedImgId = img.id
     gCurrImg = img
-    console.log(img);
+    
 
 }
 
 function getImg() {
-    console.log(gCurrImg);
+    
     return gCurrImg
     
 }
@@ -102,14 +104,14 @@ function downText() {
 
 function AlignChange(align, offsetX) {
     gMeme.lines[gMeme.selectedLineIdx].align = align
-    console.log(offsetX);
+    
 
     var x
     if (align === 'center') x = offsetX / 2
     if (align === 'left') x = 60
     if (align === 'right') x = offsetX - 60
 
-    console.log(x);
+   
 
     gMeme.lines[gMeme.selectedLineIdx].pos.x = x
 
@@ -132,6 +134,7 @@ function DeleteLine() {
 }
 
 function AddLine() {
+    gMeme.howMany +=1
     if (!gMeme.lines.length === 2) return
     gMeme.lines = [
         {
@@ -141,7 +144,8 @@ function AddLine() {
             color: 'black',
             pos: { x: 225, y: 60, rate: 20 },
             id: 0,
-            font: 'impact'
+            font: 'impact',
+            isDrag:false
         }, {
             align: 'center',
             txt: 'text',
@@ -149,7 +153,8 @@ function AddLine() {
             color: 'black',
             pos: { x: 225, y: 380, rate: 20 },
             id: 1,
-            font: 'impact'
+            font: 'impact',
+            isDrag:false
 
         }
     ]
@@ -166,4 +171,15 @@ function isTextClick(clickedPos) {
     })
 
     return clickText
+}
+
+function setTextDrag(isDrag){
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+}
+
+function moveText(dx, dy){
+    gMeme.lines[gMeme.selectedLineIdx].pos.x = dx
+   
+    
+    gMeme.lines[gMeme.selectedLineIdx].pos.y = dy
 }
