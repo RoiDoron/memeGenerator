@@ -21,7 +21,8 @@
         <button class="toggle-menu-btn" onclick="toggleMenu()" type="button">☰</button>
     </header>
     <section class="gallery-container">
-        <button onclick="onFlex()" > I'm flex</button>
+        <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+        <button class="btn" onclick="onFlex()" > I'm flex</button>
         <div></div>
     </section>
     <section hidden class="editor-container">

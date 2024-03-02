@@ -39,3 +39,22 @@ function onFlex(){
   Flex()
   renderMeme()
 }
+
+function onImgInput(ev) {
+  loadImageFromInput(ev, onImgSelect)
+}
+
+// Read the file from the input
+// When done send the image to the callback function
+
+function loadImageFromInput(ev, onImageReady) {
+  const reader = new FileReader()
+
+  reader.onload = ev => {
+      let img = new Image() 
+      img.src = ev.target.result 
+      img.onload = () => onImageReady(img)
+  }
+  reader.readAsDataURL(ev.target.files[0]) 
+}
+
