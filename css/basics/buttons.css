@@ -1,11 +1,11 @@
 .btn {
     padding: 0.6em 1.5em;
 
-    background-color: #fefefe00; 
+    background-color: #fefefe00;
     color: var(--primary-btntxt);
     font-weight: bold;
 
-    
+
     letter-spacing: 0.11em;
     border-radius: 3em;
     border: none;
@@ -14,15 +14,33 @@
 
 .btn:hover {
     color: #27B285;
-    background-color: var(--primary-btn); 
+    background-color: var(--primary-btn);
 }
 
 
 
-.toggle-menu-btn{
+.toggle-menu-btn {
     margin-right: 10px;
     font-size: 2em;
     background-color: rgba(255, 0, 0, 0);
     border: none;
     color: var(--primary-btntxt);
+}
+
+.btn-share,
+.btn-download {
+    
+    border-radius: 1em;
+}
+
+.btn-download {
+    background-color: #8F44BB;
+    padding: 17px 58.395px;
+    border: black solid 2px;
+}
+
+.btn-share{
+    height: 53px;
+    width: 215px;
+    background-color:#1E7CD3 ;
 }

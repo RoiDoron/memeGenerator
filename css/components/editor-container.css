@@ -1,28 +1,126 @@
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns:
-    minmax(20px, 1fr)
-    minmax(auto, 600px)
-    minmax(20px, 1fr);
+        minmax(20px, 1fr) minmax(auto, 600px) minmax(20px, 1fr);
     gap: 10px;
 }
 
-.edit-options-container{
+/* EDIT OPTIONS  */
+.edit-options-container {
+
     grid-column: 2;
-    
+    background-color: #383B42;
+    margin-left: 10px;
+    margin-top: 22px;
+    border-radius: 2em;
+    padding: 10px;
+
 }
 
-.canvas-container{  
-   
+.text {
+    width: 27.937rem;
+    height: 3.6875rem;
+    text-align: center;
+    border-radius: 3em;
+    border: none;
+    margin-top: 20px;
+    background-color: #EBEEF3;
+    font-size: 1.562em;
+}
+
+.line-container{
+    /* align-items: center;
+    text-align: center; */
+}
+
+.line-container button{
+    width: 60px;
+    height: 55px; 
+    margin-top:  20px; 
+    margin-left: 20px;
+    border-radius: 0.8em;
+    border: none;
+    font-size: 1.5em;
+}
+.text-select,
+.text-down,
+.text-up{
+    background-color:#35ABCA ;
+    color: #FFFFFF;
+}
+
+.text-select:hover,
+.text-down:hover,
+.text-up:hover{
+
+    border: 5px solid #73c8dd;
+}
+
+.text-add{
+background-color: #40DF58;
+color: white;
+}
+
+.text-add:hover{
+border: 5px solid #03864b;
+}
+
+.text-delete{
+    background-color: #E13936;
+    color: white;
+}
+
+.text-delete:hover{
+    border: 5px solid #ee7573;
+}
+
+/* TEXT CONTAINER */
+
+.edit-text-container{
+    position: relative;
+    background-color: #19A59F;
+    margin-top: 20px;
+    border-radius: 3em;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.edit-text-container button{
+    width: 58px;
+    height: 53px;
+    border-radius: 0.8em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.edit-text-container input{
+position: absolute;
+left:11em ;
+bottom: 20px;
+opacity: 0;
+}
+.edit-text-container label{
+    display: inline;
+    position: relative;
+    font-size: 3em;
+}
+.edit-text-container .color-btn{
+    margin-top: 20px;
+}
+
+.share-download-container{
+    margin-top: 20px;
+}
+.canvas-container {
     grid-column: 2;
     width: 90vw;
     height: 90vw;
-    margin: 20px auto ;
+    margin: 20px auto;
 }
 
-canvas{
-   
-   
+
+canvas {
+
+
     border-radius: 2em;
 }
-
