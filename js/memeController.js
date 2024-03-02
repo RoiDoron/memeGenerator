@@ -7,9 +7,6 @@ let currText = 0
 let gStartPos
 
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
-const myImage = new Image();
-myImage.src = "img/4.jpg";
-
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
@@ -18,7 +15,6 @@ function onInit() {
     addListeners()
 
 }
-
 
 function renderMeme() {
 
@@ -82,7 +78,6 @@ function resizeCanvas() {
 
     renderMeme()
 }
-
 
 function onTextInput(text) {
     setLineText(text)
@@ -152,8 +147,6 @@ function downloadImg(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
 }
-
-//event listeners
 
 function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', onDown)

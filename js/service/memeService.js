@@ -83,9 +83,11 @@ function SmallerFont() {
 
 function changePlaceTxt(offsetWidth, offsetHeight) {
     var x
+
     if (gAlign === 'center') x = offsetWidth / 2
     if (gAlign === 'left') x = 60
     if (gAlign === 'center') x = offsetWidth - 60
+
     gMeme.lines.forEach(line => line.pos.x = x)
     gMeme.lines[1].pos.y = offsetHeight - 60
 }
@@ -103,15 +105,13 @@ function downText() {
 }
 
 function AlignChange(align, offsetX) {
+
     gMeme.lines[gMeme.selectedLineIdx].align = align
     
-
     var x
     if (align === 'center') x = offsetX / 2
     if (align === 'left') x = 60
     if (align === 'right') x = offsetX - 60
-
-   
 
     gMeme.lines[gMeme.selectedLineIdx].pos.x = x
 
@@ -180,6 +180,5 @@ function setTextDrag(isDrag){
 function moveText(dx, dy){
     gMeme.lines[gMeme.selectedLineIdx].pos.x = dx
    
-    
     gMeme.lines[gMeme.selectedLineIdx].pos.y = dy
 }

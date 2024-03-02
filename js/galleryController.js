@@ -6,19 +6,17 @@ function renderGallery() {
   for (let i = 1; i < 19; i++) {
 
     HTMLstr += `<div class="img-card"><img id="${i}" src="img/${i}.jpg" onclick="onImgSelect(this)"></div>`
-
   }
- 
-
-
   elGallery.innerHTML = HTMLstr
 }
 
 function onImgSelect(img) {
   const elGallery = document.querySelector('.gallery-container')
   elGallery.hidden = true
+
   const elBtn = document.querySelector('.btn-gallery')
   elBtn.classList.remove('push')
+
   setImg(img)
   renderMeme()
 }
@@ -26,28 +24,28 @@ function onImgSelect(img) {
 function onGallery(btn) {
   const elGallery = document.querySelector('.gallery-container')
   elGallery.hidden = false
+
   const elEditor = document.querySelector('.editor-container')
   elEditor.hidden = true
+
   const elAbout = document.querySelector('.about')
   elAbout.hidden = true
 
   btn.classList.add('push')
 }
 
-
 function onFlex(){
   const elGallery = document.querySelector('.gallery-container')
   elGallery.hidden = true
+
   Flex()
+
   renderMeme()
 }
 
 function onImgInput(ev) {
   loadImageFromInput(ev, onImgSelect)
 }
-
-// Read the file from the input
-// When done send the image to the callback function
 
 function loadImageFromInput(ev, onImageReady) {
   const reader = new FileReader()

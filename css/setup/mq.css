@@ -67,7 +67,8 @@
         width: 40vw;
         height: 40vw;
     }
-    .grid-container{
+
+    .grid-container {
         gap: 10px;
     }
 }
