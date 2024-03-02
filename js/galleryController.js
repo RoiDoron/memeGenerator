@@ -28,6 +28,8 @@ function onGallery(btn) {
   elGallery.hidden = false
   const elEditor = document.querySelector('.editor-container')
   elEditor.hidden = true
+  const elAbout = document.querySelector('.about')
+  elAbout.hidden = true
 
   btn.classList.add('push')
 }

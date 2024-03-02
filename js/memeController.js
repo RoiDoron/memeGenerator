@@ -4,6 +4,8 @@ let gElCanvas
 let gCtx
 let gLines = 1
 let currText = 0
+let gStartPos
+
 const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 const myImage = new Image();
 myImage.src = "img/4.jpg";
@@ -155,25 +157,58 @@ function downloadImg(elLink) {
 
 function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', onDown)
-    // gElCanvas.addEventListener('mousemove', onMove)
-    // gElCanvas.addEventListener('mouseup', onUp)
+    gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mouseup', onUp)
 }
 
 function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown)
-    // gElCanvas.addEventListener('touchmove', onMove)
-    // gElCanvas.addEventListener('touchend', onUp)
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchend', onUp)
 }
 
 function onDown(ev) {
+    const clickedPos = getEvPos(ev)
+    if(!isTextClick(clickedPos))return
+    const line = isTextClick(clickedPos)
+    SelectLineWithClick(line)
+    const elInput = document.querySelector('.text')
+    elInput.value = line.txt
+	gStartPos = getEvPos(ev)        // Get the ev pos from mouse or touch
+	if (!isTextClick(gStartPos)) return
 
-    // const clickedPos = getEvPos(ev)        
-    // console.log(isTextClick(clickedPos))
 
+	setTextDrag(true)
+	//Save the pos we start from
+	document.body.style.cursor = 'grabbing'
+}
+
+function onMove(ev) {
+    const meme = getMeme()
+	const { isDrag } = meme.lines[meme.selectedLineIdx]
+	if (!isDrag) return
+
+	const pos = getEvPos(ev)
+	// Calc the delta, the diff we moved
+	const dx = pos.x 
+	const dy = pos.y 
+	moveText(dx, dy)
+
+	// Save the last pos, we remember where we`ve been and move accordingly
+	gStartPos = pos
+	
+    // The canvas is rendered again after every move
+	renderMeme()
+}
+
+function onUp() {
+	setTextDrag(false)
+	document.body.style.cursor = 'default'
 }
 
 function onCanvasClick(ev) {
     const clickedPos = getEvPos(ev)
+    if(!isTextClick(clickedPos))return
     const line = isTextClick(clickedPos)
     SelectLineWithClick(line)
     const elInput = document.querySelector('.text')
@@ -246,4 +281,14 @@ function doUploadImg(imgDataUrl, onSuccess) {
     }
     XHR.open('POST', '//ca-upload.com/here/upload.php')
     XHR.send(formData)
+  }
+
+  function onAbout(){
+    const elEditor = document.querySelector('.editor-container')
+    elEditor.hidden = true
+    const elGallery = document.querySelector('.gallery-container')
+    elGallery.hidden = true
+    const elAbout = document.querySelector('.about')
+    elAbout.hidden = false
+
   }

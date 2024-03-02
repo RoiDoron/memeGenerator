@@ -16,11 +16,11 @@
         <div class="logo">Meme Gen</div>
         <div class="main-nav">
             <button onclick="onGallery(this)" class="btn btn-gallery push">Gallery</button>
-            <button class="btn">About</button>
+            <button onclick="onAbout()" class="btn">About</button>
         </div>
         <button class="toggle-menu-btn" onclick="toggleMenu()" type="button">☰</button>
     </header>
-    <section class="gallery-container">
+    <section  class="gallery-container">
         <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
         <button class="btn" onclick="onFlex()" > I'm flex</button>
         <div></div>
@@ -68,6 +68,15 @@
               
             </div>
         </div>
+    </section>
+
+    <section hidden class="about">
+        <h1>Meme gen</h1>
+        <h2>created by : Roi Doron</h2>
+        <h2>version: 2.0</h2>
+        <h2>2024</h2>
+
+
     </section>
 
     <script src="js/service/memeService.js"></script>
