@@ -33,6 +33,8 @@ function renderMeme() {
 function drawText(meme) {
     const lines = meme.lines
     for (let i = 0; i < gLines; i++) {
+        console.log(gLines);
+        
         const line = lines[i]
         gCtx.lineWidth = 2
         gCtx.strokeStyle = line.color
@@ -100,15 +102,13 @@ function onSmallerFont() {
 }
 
 function onAddLine() {
-    AddLine()
     if (gLines > 1) return
-    gLines++
+    AddLine()
     renderMeme()
 }
 
 function onDeleteLine() {
     DeleteLine()
-    gLines--
     renderMeme()
 }
 
@@ -144,6 +144,8 @@ function onAlignChange(align) {
 }
 
 function downloadImg(elLink) {
+    notSelected()
+    renderMeme()
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
 }
@@ -178,6 +180,7 @@ function onDown(ev) {
 
 function onMove(ev) {
     const meme = getMeme()
+    if(meme.selectedLineIdx === -1) return
 	const { isDrag } = meme.lines[meme.selectedLineIdx]
 	if (!isDrag) return
 
@@ -195,6 +198,7 @@ function onMove(ev) {
 }
 
 function onUp() {
+   
 	setTextDrag(false)
 	document.body.style.cursor = 'default'
 }

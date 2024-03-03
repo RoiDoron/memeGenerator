@@ -20,9 +20,9 @@
         </div>
         <button class="toggle-menu-btn" onclick="toggleMenu()" type="button">☰</button>
     </header>
-    <section  class="gallery-container">
+    <section class="gallery-container">
         <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
-        <button class="btn" onclick="onFlex()" > I'm flex</button>
+        <button class="btn" onclick="onFlex()"> I'm flex</button>
         <div></div>
     </section>
     <section hidden class="editor-container">
@@ -30,42 +30,47 @@
             <div class="canvas-container"><canvas onclick="onCanvasClick(event)" height="450" width="450"></canvas>
             </div>
             <div class="edit-options-container ">
-                <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
-                <div class="line-container">
-                    <button class="fa-solid fa-up-long text-up" onclick="onUpText()"></button>
-                    <button class="fa-solid fa-down-long text-down" onclick="onDownText()"></button>
-                    <button class="fa-solid fa-up-down text-select" onclick="onSelectLine()"></button>
-                    <button class="fa-solid fa-plus text-add" onclick="onAddLine()"></button>
-                    <button class="fa-solid fa-trash text-delete" onclick="onDeleteLine()"></button>
+                <div class="edit-grid-container">
+                    <input type="text" oninput="onTextInput(this.value)" class="text" placeholder="meme text">
+                    <div class="line-container">
+                        <button class="fa-solid fa-up-long text-up" onclick="onUpText()"></button>
+                        <button class="fa-solid fa-down-long text-down" onclick="onDownText()"></button>
+                        <button class="fa-solid fa-up-down text-select" onclick="onSelectLine()"></button>
+                        <button class="fa-solid fa-plus text-add" onclick="onAddLine()"></button>
+                        <button class="fa-solid fa-trash text-delete" onclick="onDeleteLine()"></button>
+                    </div>
+                    <div class="edit-text-container">
+                        <div class="first-row">
+                            <button onclick="onBiggerFont()">A+</button>
+                            <button onclick="onSmallerFont()">A-</button>
+
+                            <button class="fa-solid fa-align-left" onclick="onAlignChange('left')"></button>
+                            <button class="fa-solid fa-align-center" onclick="onAlignChange('center')"></button>
+                            <button class="fa-solid fa-align-right" onclick="onAlignChange('right')"></button>
+                        </div>
+                        <div class="second-row">
+                            <button class="color-btn">
+                                <label class="fa-solid fa-palette" for="color"></label>
+                            </button>
+                            <input type="color" id="color" oninput="onColorChange(this.value)">
+
+                            <!-- <input type="color" oninput="onColorChange(this.value)"> -->
+                            <select class="select-font" name="font-family" onchange="onFontChange(this.value)">
+                                <option value="impact">Impact</option>
+                                <option value="ariel">Ariel</option>
+                                <option value="courier New">Courier New</option>
+                                <option value="anta">Anta</option>
+                                <option value="monaco">Monaco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="share-download-container">
+                        <button class="btn-share" onclick="onUploadImg()"> Upload to Facebook </button>
+                        <a href="#" class="btn-download" onclick="downloadImg(this)" download="my-img.jpg">Download
+                            jpeg</a>
+                    </div>
                 </div>
-                <div class="edit-text-container">
 
-                    <button onclick="onBiggerFont()">A+</button>
-                    <button onclick="onSmallerFont()">A-</button>
-
-                    <button class="fa-solid fa-align-left" onclick="onAlignChange('left')"></button>
-                    <button class="fa-solid fa-align-center" onclick="onAlignChange('center')"></button>
-                    <button class="fa-solid fa-align-right" onclick="onAlignChange('right')"></button>
-
-                    <button class="color-btn">
-                        <label class="fa-solid fa-palette" for="color"></label>
-                    </button>
-                    <input type="color" id="color" oninput="onColorChange(this.value)">
-                    <!-- <input type="color" oninput="onColorChange(this.value)"> -->
-                    <select name="font-family" onchange="onFontChange(this.value)">
-                        <option value="impact">Impact</option>
-                        <option value="ariel">Ariel</option>
-                        <option value="courier New">Courier New</option>
-                        <option value="anta">Anta</option>
-                        <option value="monaco">Monaco</option>
-                    </select>
-
-                </div>
-                <div class="share-download-container">
-                    <button class="btn-share" onclick="onUploadImg()"> Upload to Facebook </button>
-                    <a href="#" class="btn-download" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
-                </div>
-              
             </div>
         </div>
     </section>

@@ -58,11 +58,12 @@
         grid-column: 2;
     }
 
+    
     .edit-options-container {
         grid-column: 3;
 
     }
-
+    
     .canvas-container {
         width: 40vw;
         height: 40vw;
@@ -71,6 +72,10 @@
     .grid-container {
         gap: 10px;
     }
+
+    .edit-text-container button {
+        margin-left: 0.7vw;
+        margin-right: 0.7vw;
+    }
 }
 
-/* @media() */

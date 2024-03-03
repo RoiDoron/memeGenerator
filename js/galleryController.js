@@ -2,10 +2,11 @@
 
 function renderGallery() {
   const elGallery = document.querySelector('.gallery-container div')
+  const imgs = getImgs()
   var HTMLstr = ''
-  for (let i = 1; i < 19; i++) {
-
-    HTMLstr += `<div class="img-card"><img id="${i}" src="img/${i}.jpg" onclick="onImgSelect(this)"></div>`
+  for (let i = 1; i <imgs.length; i++) {
+    const img = imgs[i]
+    HTMLstr += `<div class="img-card"><img id="${img.id}" src="${img.url}" onclick="onImgSelect(this)"></div>`
   }
   elGallery.innerHTML = HTMLstr
 }

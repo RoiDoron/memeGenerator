@@ -35,12 +35,12 @@
 
 .btn-download {
     background-color: #8F44BB;
-    padding: 17px 58.395px;
+    padding: 17px 20px;
     border: black solid 2px;
 }
 
 .btn-share{
-    height: 53px;
-    width: 215px;
+    height: 3.3125rem;
+    width: 45%;
     background-color:#1E7CD3 ;
 }
